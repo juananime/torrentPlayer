@@ -105,9 +105,6 @@ function promptMovieName() {
 
   prompt.get(prMovieName, function (err, result) {
     if (err) { return onErr(err); }
-    console.log('Command-line input received:');
-
-
     searchWords = result.movieName;
     //console.log(' Film: ' + nameFormated);
     searchPirateBay(searchWords);
