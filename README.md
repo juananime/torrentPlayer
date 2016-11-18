@@ -1,8 +1,8 @@
 # TORRENTPLAYER
 
-NodeJS app that helps to search,choose and play torrent within the PirateBay API and the YPS API.
+NodeJS app that helps to search,choose and play torrents files within the PirateBay and YPS API.
 
-That is a shell/terminal app, pretty much just functional, so no fancy UI here.
+Torrentplayer is a shell/terminal app, pretty much just functional shit, so no fancy UI here.
 
 ### Installation
 
