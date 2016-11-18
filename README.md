@@ -8,14 +8,14 @@ Torrentplayer is a shell/terminal app, pretty much just functional shit, so no f
 
 Torrentplayer requires [Node.js](https://nodejs.org/) v4+ to run.
 
-Download and extract the [latest pre-built release](https://github.com/juananime/torrentPlayer).
+Download the files from the [latest release](https://github.com/juananime/torrentPlayer).
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd torrentplayer
+$ cd torrentPlayer
 $ npm install -d
-$ node app
+$ node app.js
 ```
 
 Happy torrent!
