@@ -1,22 +1,29 @@
-# torrentPlayer
+# TORRENTPLAYER
 
 NodeJS app that helps to search,choose and play torrent within the PirateBay API and the YPS API.
 
 That is a shell/terminal app, pretty much just functional, so no fancy UI here.
 
-## Instalation
+### Installation
 
-Download git.
+Torrentplayer requires [Node.js](https://nodejs.org/) v4+ to run.
 
-Update npm:
+Download and extract the [latest pre-built release](git@github.com:juananime/torrentPlayer.git).
 
-npm install
+Install the dependencies and devDependencies and start the server.
 
-Execute:
-
-node app.js
+```sh
+$ cd torrentplayer
+$ npm install -d
+$ node app
+```
 
 Happy torrent!
 
+License
+----
+
+MIT
 
 
+**Free Software, Hell Yeah!**
