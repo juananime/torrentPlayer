@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+     "snippet": "./app.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -13,36 +16,35 @@
     "mongodb": "^2.2.11",
     "yts.to": "^0.1.4",
     "prompt": "",
-    "optimist":"^0.6.1",
-    "rc":"^1.1.6",
-    "clivas":"^0.2.0",
-    "numeral":"^1.5.3",
-    "network-address":"^1.1.0",
-    "peerflix":"^0.36.0",
-    "util":"^0.10.3",
-    "fs":"",
-    "http":"",
-    "numeral":"",
-    "os":"",
-    "child_process":"",
-    "keypress":"",
-    "open":"",
-    "inquirer":"",
-    "parse-torrent":"",
-    "path":"",
-    "accepts":"",
-    "appjs":"",
-    "thepiratebay":"^1.3.2"
-
-
-
-
+    "optimist": "^0.6.1",
+    "rc": "^1.1.6",
+    "clivas": "^0.2.0",
+    "numeral": "",
+    "network-address": "^1.1.0",
+    "peerflix": "^0.36.0",
+    "util": "^0.10.3",
+    "fs": "",
+    "http": "",
+    "os": "",
+    "child_process": "",
+    "keypress": "",
+    "open": "",
+    "inquirer": "",
+    "parse-torrent": "",
+    "path": "",
+    "accepts": "",
+    "thepiratebay": "^1.3.2",
+    "opensubtitles-api": "",
+    "request-promise":"",
+    "lodash":"",
+    "extend":""
   },
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "keywords": [
     "yps",
     "browser"
-  ]
+  ],
+  "bin": {
+    "yps_browser": "bin/yps_browser.js"
+  }
 }

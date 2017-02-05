@@ -1,25 +1,18 @@
-<!doctype html>
-
-<html lang="en">
+<html ng-app>
 <head>
-  <meta charset="utf-8">
-
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+  <title>Hello World in AngularJS</title>
 </head>
-
 <body>
-  <div>
-      <input type="text" placeholder="Enter film" id="filmName"/>
-  </div>
-
-  <script src="js/scripts.js"></script>
+<input ng-model="name"> Enter film name
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script>
+  angular.module('changeExample', [])
+          .controller('ExampleController', ['$scope', function($scope) {
+            $scope.counter = 0;
+            $scope.change = function() {
+              $scope.counter++;
+            };
+          }]);
+</script>
 </body>
 </html>

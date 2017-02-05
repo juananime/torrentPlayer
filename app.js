@@ -121,17 +121,16 @@ function promptMovieName() {
 function searchPirateBay(tvShowName){
   // do the GET request
   PirateBay.search(tvShowName, {
-    category: 205
+    category: 'all'
   })
   .then(results => parsePirateBay(results))
-  .catch(err => console.log(err))
+  .catch(err => searchFilm(tvShowName))
+
 
 }
 
 
 function parsePirateBay(results){
-  console.log(results);
-  console.log(results.length);
   if(results.length == 0){
     var nameFormated = searchWords.replace(' ','&')
     searchFilm(nameFormated)
@@ -177,6 +176,7 @@ function playPirateBay(movie){
 }
 
 function searchFilm(movieName){
+
   yts.findMovie(movieName, {with_rt_ratings: true}).then( function(movies) {
 //    console.log(movies);
     if(movies.data != null ){
@@ -203,6 +203,7 @@ function searchFilm(movieName){
 
     function onErr(err) {
       console.log("XXXXXX::"+err);
+
       return 1;
     }
   }else{
