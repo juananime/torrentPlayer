@@ -21,6 +21,7 @@ var path = require('path')
 const PirateBay = require('thepiratebay')
 var moviesAvailable;
 var searchWords;
+const commandLineArgs = require('command-line-args')
 
 /**const {app, BrowserWindow} = require('electron')
 const path = require('path')
@@ -79,6 +80,20 @@ app.on('activate', () => {
 **/
 
 prompt.start();
+const optionDefinitions = [
+    { name: 'magnet', alias: 'v', type: Boolean }
+]
+const options = commandLineArgs(optionDefinitions)
+
+console.log(JSON.stringify(options));
+
+var prMagnet = [
+    {
+        name: 'magnet',
+        warning: 'Enter Magnet: '
+    },
+
+];
 
 var prMovieName = [
   {
@@ -88,6 +103,7 @@ var prMovieName = [
   },
 
 ];
+
 var prChooseFilm = [
   {
     name: 'chooseFilm',
@@ -103,18 +119,40 @@ setTimeout(promptMovieName, 1000);
 
 function promptMovieName() {
 
-  prompt.get(prMovieName, function (err, result) {
-    if (err) { return onErr(err); }
-    searchWords = result.movieName;
-    //console.log(' Film: ' + nameFormated);
-    searchPirateBay(searchWords);
+  if(options.magnet){
+      prompt.get(prMagnet, function (err, result) {
+          if (err) { return onErr(err); }
+          filename = result.magnet;
+          //console.log(' Film: ' + nameFormated);
+          parsetorrent.remote(filename, function (err, parsedtorrent) {
+              if (err) {
+                  console.error(err.message)
+                  process.exit(1)
+              }
+              ontorrent(parsedtorrent)
+          })
 
-  });
+      });
 
-  function onErr(err) {
-    console.log(err);
-    return 1;
+      function onErr(err) {
+          console.log(err);
+          return 1;
+      }
+  }else{
+      prompt.get(prMovieName, function (err, result) {
+          if (err) { return onErr(err); }
+          searchWords = result.movieName;
+          //console.log(' Film: ' + nameFormated);
+          searchPirateBay(searchWords);
+
+      });
+
+      function onErr(err) {
+          console.log(err);
+          return 1;
+      }
   }
+
 
 }
 
